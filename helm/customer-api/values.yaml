@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: image-registry.openshift-image-registry.svc:5000/customer-app/customer-api
-  tag: latest
+  tag: "3080c196576fe2a0c180aa4111a043435869dc5b"
   pullPolicy: Always
 
 service:
