@@ -11,7 +11,10 @@ service:
 
 route:
   enabled: true
-  host: ""   # vacío = OpenShift genera el host automáticamente
+  host: ""
+
+env:
+  VITE_API_URL: "https://customer-api-customer-app.apps.itz-g7soj0.infra01-lb.dal14.techzone.ibm.com"
 
 resources:
   requests:

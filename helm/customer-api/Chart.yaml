@@ -1,0 +1,6 @@
+apiVersion: v2
+name: customer-api
+description: Spring Boot REST API que expone datos de clientes
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

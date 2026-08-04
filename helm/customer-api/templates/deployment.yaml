@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "customer-app.fullname" . }}
+  name: {{ include "customer-api.fullname" . }}
   labels:
-    {{- include "customer-app.labels" . | nindent 4 }}
+    {{- include "customer-api.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "customer-app.fullname" . }}
+      app: {{ include "customer-api.fullname" . }}
   template:
     metadata:
       labels:
-        app: {{ include "customer-app.fullname" . }}
-        {{- include "customer-app.labels" . | nindent 8 }}
+        app: {{ include "customer-api.fullname" . }}
+        {{- include "customer-api.labels" . | nindent 8 }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -21,25 +21,18 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8080
-          {{- if .Values.env }}
-          env:
-            {{- range $key, $val := .Values.env }}
-            - name: {{ $key }}
-              value: {{ $val | quote }}
-            {{- end }}
-          {{- end }}
           readinessProbe:
             httpGet:
-              path: /
+              path: /actuator/health
               port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 5
+            initialDelaySeconds: 20
+            periodSeconds: 10
           livenessProbe:
             httpGet:
-              path: /
+              path: /actuator/health
               port: 8080
-            initialDelaySeconds: 15
-            periodSeconds: 10
+            initialDelaySeconds: 30
+            periodSeconds: 15
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           securityContext:
