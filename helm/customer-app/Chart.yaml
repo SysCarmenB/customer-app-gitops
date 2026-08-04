@@ -1,0 +1,6 @@
+apiVersion: v2
+name: customer-app
+description: Aplicación web React que lista clientes ficticios con filtrado
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

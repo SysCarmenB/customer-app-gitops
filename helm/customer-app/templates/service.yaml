@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "customer-app.fullname" . }}
+  labels:
+    {{- include "customer-app.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: {{ include "customer-app.fullname" . }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 8080
