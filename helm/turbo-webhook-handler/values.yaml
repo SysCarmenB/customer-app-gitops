@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: image-registry.openshift-image-registry.svc:5000/customer-app/turbo-webhook-handler
-  tag: latest
+  tag: "6cddea73e465b1740dddb5b0d2583b7f5e364d6a"
   pullPolicy: Always
 
 service:
