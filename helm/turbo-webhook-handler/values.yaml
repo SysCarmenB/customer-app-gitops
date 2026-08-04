@@ -1,0 +1,26 @@
+replicaCount: 1
+
+image:
+  repository: image-registry.openshift-image-registry.svc:5000/customer-app/turbo-webhook-handler
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 3000
+
+route:
+  enabled: true
+  host: ""
+
+env:
+  GITHUB_OWNER: "SysCarmenB"
+  GITHUB_GITOPS_REPO: "customer-app-gitops"
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 200m
+    memory: 128Mi

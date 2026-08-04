@@ -1,0 +1,6 @@
+apiVersion: v2
+name: turbo-webhook-handler
+description: Node.js webhook handler for Turbonomic resize actions
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
