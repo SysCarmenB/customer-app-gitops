@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: image-registry.openshift-image-registry.svc:5000/customer-app/customer-app
-  tag: "ca3cc6efb6ff6f5cc6a62a29d15f8a6598479e34"
+  tag: "cc2772e1e8916cb7674510882ef32797d6d8cab0"
   pullPolicy: Always
 
 service:
