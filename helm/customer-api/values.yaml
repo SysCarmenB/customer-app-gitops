@@ -15,8 +15,8 @@ route:
 
 resources:
   requests:
-    cpu: 70m
-    memory: 180224Ki
+    cpu: 60m
+    memory: 163840Ki
   limits:
-    cpu: 1300m
-    memory: 524288Ki
+    cpu: 0m
+    memory: 393216Ki
